@@ -1,39 +1,19 @@
 <template>
 
-    <div class="container">
-        <h2>All my posts:</h2>
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                <h4>{{ post.title }}</h4>
-                <p>{{ post.content }}</p>
-            </li>
-        </ul>
-    </div>
+    <HeaderComp/>
+    <router-view></router-view>
+    <FooterComp/>
 
 </template>
 
 <script>
+import HeaderComp from './components/partials/HeaderComp.vue';
+import FooterComp from './components/partials/FooterComp.vue';
 export default {
-    name: 'App',
-    data() {
-        return {
-            apiUrl: '/api/posts',
-            posts: null
-        }
-    },
-    methods: {
-        getApi() {
-            axios.get(this.apiUrl)
-                .then(res => {
-                    this.posts = res.data;
-                })
-        }
-    },
-    mounted() {
-        this.getApi();
-    }
+    name: "App",
+    components: { HeaderComp, FooterComp }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 </style>
