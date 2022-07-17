@@ -154,7 +154,11 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("HeaderComp"), _vm._v(" "), _c("router-view"), _vm._v(" "), _c("FooterComp")], 1);
+  return _c("div", {
+    staticClass: "d-flex flex-column min-vh-100"
+  }, [_c("HeaderComp"), _vm._v(" "), _c("router-view"), _vm._v(" "), _c("FooterComp", {
+    staticClass: "mt-auto"
+  })], 1);
 };
 
 var staticRenderFns = [];
@@ -185,41 +189,13 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("footer", {
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("footer", {
     staticClass: "py-3 my-4"
-  }, [_c("ul", {
-    staticClass: "nav justify-content-center border-bottom pb-3 mb-3"
-  }, [_c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Home")])]), _vm._v(" "), _c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("About")])]), _vm._v(" "), _c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Blog")])]), _vm._v(" "), _c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Contacts")])])]), _vm._v(" "), _c("p", {
+  }, [_c("p", {
     staticClass: "text-center text-muted"
-  }, [_vm._v("© 2022 Company, Inc")])]);
+  }, [_vm._v("Made with pain and sorrow 💔")])])]);
 }];
 render._withStripped = true;
 
@@ -241,35 +217,45 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("header", {
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("header", {
     staticClass: "d-flex justify-content-center py-3"
   }, [_c("ul", {
     staticClass: "nav nav-pills"
-  }, [_c("li", [_c("router-link", {
+  }, [_c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "home"
       }
     }
-  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "blog"
       }
     }
-  }, [_vm._v("Blog")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("Blog")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "about"
       }
     }
-  }, [_vm._v("About")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("About")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "contacts"
       }
     }
-  }, [_vm._v("Contacts")])], 1)])]);
+  }, [_vm._v("Contacts")])], 1)])])]);
 };
 
 var staticRenderFns = [];

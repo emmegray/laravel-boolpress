@@ -2076,7 +2076,11 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("HeaderComp"), _vm._v(" "), _c("router-view"), _vm._v(" "), _c("FooterComp")], 1);
+  return _c("div", {
+    staticClass: "d-flex flex-column min-vh-100"
+  }, [_c("HeaderComp"), _vm._v(" "), _c("router-view"), _vm._v(" "), _c("FooterComp", {
+    staticClass: "mt-auto"
+  })], 1);
 };
 
 var staticRenderFns = [];
@@ -2107,7 +2111,15 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", [_vm._v("About us:")]), _vm._v(" "), _c("p", [_vm._v('"Però quanto a te, quello che puoi fare che tu, per te qualcosa da poter fare dovrebbe esserci. Non ti costringerà nessuno. Pensa da te stesso, decidi da te stesso che cosa adesso tu stesso debba fare."')])]);
+  return _c("div", {
+    staticClass: "px-4 py-5 my-5 text-center"
+  }, [_c("h1", {
+    staticClass: "display-5 fw-bold"
+  }, [_vm._v("About us:")]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6 mx-auto"
+  }, [_c("p", {
+    staticClass: "lead mb-4"
+  }, [_vm._v("Però quanto a te, quello che puoi fare che tu, per te qualcosa da poter fare dovrebbe esserci. Non ti costringerà nessuno. Pensa da te stesso, decidi da te stesso che cosa adesso tu stesso debba fare.")])])]);
 }];
 render._withStripped = true;
 
@@ -2130,15 +2142,21 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container"
-  }, [_c("h2", [_vm._v("All my posts:")]), _vm._v(" "), _vm._l(_vm.posts, function (post) {
+    staticClass: "px-4 py-5 my-5 text-center"
+  }, [_c("h1", {
+    staticClass: "display-5 fw-bold"
+  }, [_vm._v("All my posts:")]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6 mx-auto"
+  }, [_vm._l(_vm.posts, function (post) {
     return _c("PostItem", {
       key: post.id,
       attrs: {
         post: post
       }
     });
-  }), _vm._v(" "), _c("button", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "d-grid gap-2 d-sm-flex justify-content-sm-center"
+  }, [_c("button", {
     attrs: {
       disabled: _vm.pagination.current === 1
     },
@@ -2168,7 +2186,7 @@ var render = function render() {
         return _vm.getApi(_vm.pagination.current + 1);
       }
     }
-  }, [_vm._v("\n    ➡️ ")])], 2);
+  }, [_vm._v("\n    ➡️ ")])], 2)], 2)]);
 };
 
 var staticRenderFns = [];
@@ -2199,7 +2217,15 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", [_vm._v("Contacts:")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat perferendis iusto a ratione consectetur vero, ad magnam, mollitia odit aspernatur, voluptas similique! Vero quas hic consectetur rem aut ex debitis.")])]);
+  return _c("div", {
+    staticClass: "px-4 py-5 my-5 text-center"
+  }, [_c("h1", {
+    staticClass: "display-5 fw-bold"
+  }, [_vm._v("Contacts:")]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6 mx-auto"
+  }, [_c("p", {
+    staticClass: "lead mb-4"
+  }, [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat perferendis iusto a ratione consectetur vero, ad magnam, mollitia odit aspernatur, voluptas similique! Vero quas hic consectetur rem aut ex debitis")])])]);
 }];
 render._withStripped = true;
 
@@ -2228,7 +2254,15 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", [_vm._v("Homepage")]), _vm._v(" "), _c("p", [_vm._v("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, deleniti repellendus? Aperiam magnam at, nulla sequi magni officia adipisci repudiandae sunt nisi recusandae ad assumenda totam nam eum ducimus aliquid.")])]);
+  return _c("div", {
+    staticClass: "px-4 py-5 my-5 text-center"
+  }, [_c("h1", {
+    staticClass: "display-5 fw-bold"
+  }, [_vm._v("Homepage")]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6 mx-auto"
+  }, [_c("p", {
+    staticClass: "lead mb-4"
+  }, [_vm._v("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, deleniti repellendus? Aperiam magnam at, nulla sequi magni officia adipisci repudiandae sunt nisi recusandae ad assumenda totam nam eum ducimus aliquid.")])])]);
 }];
 render._withStripped = true;
 
@@ -2257,41 +2291,13 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("footer", {
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("footer", {
     staticClass: "py-3 my-4"
-  }, [_c("ul", {
-    staticClass: "nav justify-content-center border-bottom pb-3 mb-3"
-  }, [_c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Home")])]), _vm._v(" "), _c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("About")])]), _vm._v(" "), _c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Blog")])]), _vm._v(" "), _c("li", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "nav-link px-2 text-muted",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Contacts")])])]), _vm._v(" "), _c("p", {
+  }, [_c("p", {
     staticClass: "text-center text-muted"
-  }, [_vm._v("© 2022 Company, Inc")])]);
+  }, [_vm._v("Made with pain and sorrow 💔")])])]);
 }];
 render._withStripped = true;
 
@@ -2313,35 +2319,45 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("header", {
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("header", {
     staticClass: "d-flex justify-content-center py-3"
   }, [_c("ul", {
     staticClass: "nav nav-pills"
-  }, [_c("li", [_c("router-link", {
+  }, [_c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "home"
       }
     }
-  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "blog"
       }
     }
-  }, [_vm._v("Blog")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("Blog")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "about"
       }
     }
-  }, [_vm._v("About")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("About")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item nav-link"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "contacts"
       }
     }
-  }, [_vm._v("Contacts")])], 1)])]);
+  }, [_vm._v("Contacts")])], 1)])])]);
 };
 
 var staticRenderFns = [];
@@ -17845,15 +17861,15 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'home',
     component: _components_HomeComp_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/',
+    path: '/blog',
     name: 'blog',
     component: _components_BlogComp_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/',
+    path: '/about',
     name: 'about',
     component: _components_AboutComp_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '/',
+    path: '/contacts',
     name: 'contacts',
     component: _components_ContactsComp_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }]

@@ -1,9 +1,11 @@
 <template>
-  <div class="container">
-    <h2>All my posts:</h2>
-    <PostItem v-for="post in posts" :key="post.id" :post="post" />
 
-    <button
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">All my posts:</h1>
+    <div class="col-lg-6 mx-auto">
+    <PostItem v-for="post in posts" :key="post.id" :post="post" />
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <button
     @click="getApi(pagination.current -1)"
     :disabled = "pagination.current=== 1"
     >
@@ -21,8 +23,9 @@
     :disabled = "pagination.current===pagination.last"
     >
     ➡️ </button>
+    </div>
+    </div>
   </div>
-
 
 </template>
 

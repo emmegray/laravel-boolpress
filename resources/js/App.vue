@@ -1,10 +1,10 @@
 <template>
-<div>
+<div class="d-flex flex-column min-vh-100">
     <HeaderComp/>
 
         <router-view></router-view>
 
-    <FooterComp/>
+    <FooterComp class="mt-auto"/>
 </div>
 </template>
 
