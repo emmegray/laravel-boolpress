@@ -1956,11 +1956,18 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: "/api/posts",
-      posts: null,
+      posts: [],
       pagination: {
         current: null,
         last: null
-      }
+      },
+      categories: [],
+      tags: [],
+      showPagination: true,
+      postFilterdByCat: false,
+      postFilterdByTag: false,
+      category_slug: "",
+      tag_slug: ""
     };
   },
   mounted: function mounted() {
@@ -2165,7 +2172,7 @@ var render = function render() {
         return _vm.getApi(_vm.pagination.current - 1);
       }
     }
-  }, [_vm._v("\n    ⬅️ ")]), _vm._v(" "), _vm._l(_vm.pagination.last, function (i) {
+  }, [_vm._v("\n          ⬅️\n        ")]), _vm._v(" "), _vm._l(_vm.pagination.last, function (i) {
     return _c("button", {
       key: i,
       attrs: {
@@ -2176,7 +2183,7 @@ var render = function render() {
           return _vm.getApi(1);
         }
       }
-    }, [_vm._v("\n  " + _vm._s(i) + "\n    ")]);
+    }, [_vm._v("\n          " + _vm._s(i) + "\n        ")]);
   }), _vm._v(" "), _c("button", {
     attrs: {
       disabled: _vm.pagination.current === _vm.pagination.last
@@ -2186,7 +2193,7 @@ var render = function render() {
         return _vm.getApi(_vm.pagination.current + 1);
       }
     }
-  }, [_vm._v("\n    ➡️ ")])], 2)], 2)]);
+  }, [_vm._v("\n          ➡️\n        ")])], 2)], 2)]);
 };
 
 var staticRenderFns = [];
