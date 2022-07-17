@@ -11,8 +11,8 @@ Route::namespace('Api')
 ->prefix('posts')
 ->group(function () {
     Route::get('/', 'PageController@index');
-    Route::get('/posts/{slug}', 'PageController@getPost');
-    Route::get('/category/{category}/posts', 'PageController@getPostByCategory');
-    Route::get('/tag/{tag}/posts', 'PageController@getPostByTag');
-    Route::get('/category/{category}/tag/{tag}/posts', 'PageController@getPostsByCatTag');
+    Route::get('/{slug}', 'PageController@getPost');
+    Route::get('/category/{category}', 'PageController@getPostByCategory');
+    Route::get('/tag/{tag}', 'PageController@getPostByTag');
+    Route::get('/category/{category}/tag/{tag}', 'PageController@getPostsByCatTag');
 });

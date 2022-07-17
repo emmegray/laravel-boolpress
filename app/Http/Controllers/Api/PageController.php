@@ -25,7 +25,7 @@ class PageController extends Controller
     }
 
     public function getPost($slug){
-        $post = Post::where('slug', $slug)->with(['category', 'tag'])->first();
+        $post = Post::where('slug', $slug)->with(['category', 'tags'])->first();
 
         return response()->json($post);
     }
