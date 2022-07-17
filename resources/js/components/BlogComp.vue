@@ -1,10 +1,18 @@
 <template>
   <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">All my posts:</h1>
+    <h1 class="display-5 fw-bold">All my {{searchType}} posts:</h1>
     <LoaderComp v-if="!posts" />
     <div v-else>
       <div class="col-lg-6 mx-auto">
-        <PostItem v-for="post in posts" :key="post.id" :post="post" />
+        <PostItem v-for="post in posts" :key="post.slug" :post="post" />
+
+        <SidebarComp
+          :categories="categories"
+          :tags="tags"
+          @searchPostByCategory="searchPostByCategory"
+          @searchPostByTag="searchPostByTag"
+        />
+
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <button
             @click="getApi(pagination.current - 1)"
@@ -35,12 +43,14 @@
 <script>
 import PostItem from "./partials/PostItem";
 import LoaderComp from "./partials/LoaderComp";
+import SidebarComp from "./partials/SidebarComp";
 
 export default {
   name: "BlogComp",
   components: {
     PostItem,
     LoaderComp,
+    SidebarComp,
   },
   data() {
     return {
@@ -57,6 +67,7 @@ export default {
       postFilterdByTag: false,
       category_slug: "",
       tag_slug: "",
+      searchType: '',
     };
   },
   mounted() {
@@ -64,24 +75,35 @@ export default {
   },
   methods: {
     getApi(page) {
+      this.posts = null;
+       this.searchType = ''
       axios.get(this.apiUrl + "?page=" + page).then((res) => {
-        /*
-            categories: [{id: 1, name: "HTML", slug: "html", created_at: "2022-07-16T13:01:04.000000Z",…},…]
-            posts: {
-              current_page: 1
-              data: [{id: 1, category_id: 1, title: "Post title example", slug: "post-title-example",…},…]
-            }
-         */
         this.posts = res.data.posts.data;
         this.pagination = {
           current: res.data.posts.current_page,
           last: res.data.posts.last_page,
         };
+        this.categories = res.data.categories;
+        this.tags = res.data.tags;
+      });
+    },
+    searchPostByCategory(slug_category) {
+      this.showPagination = false;
+      this.getPostsByTagCategory("/post-category/", slug_category);
+    },
+    searchPostByTag(slug_tag) {
+      this.showPagination = false;
+      this.getPostsByTagCategory("/post-tag/", slug_tag);
+    },
+    getPostsByTagCategory(uri, slug) {
+      axios.get(this.apiUrl + uri + slug).then((res) => {
+        this.searchType = res.data.name;
+        this.posts = res.data.posts;
       });
     },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 </style>

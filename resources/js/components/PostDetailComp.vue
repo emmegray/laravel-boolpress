@@ -5,6 +5,7 @@
       <i>{{ formatDate }}</i>
       <p>{{ post.content }}</p>
       <h5>{{ post.category.name }}</h5>
+      <img :src="post.image" :alt="post.title"></img>
       <h5>Tags:</h5>
       <ul class="list-group">
         <li class="list-group-item" v-for="tag in post.tags" :key="`tag${tag.id}`">{{ tag.name }}</li>
@@ -39,11 +40,10 @@ export default {
   methods: {
     getApi() {
       axios
-        /* Route::get('/posts/{slug}', 'Api\PageController@getPost'); */
         .get(this.apiUrl + "/posts/" + this.slug)
         .then((response) => {
           const rd = response.data;
-          this.post = rd;
+          this.post = res.data;
         });
     },
     checkDate(dateToCheck) {

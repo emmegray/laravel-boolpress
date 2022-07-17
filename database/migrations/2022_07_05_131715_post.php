@@ -18,6 +18,8 @@ class Post extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('content');
+            $table->string('image')->nullable();
+            $table->string('image_original_name')->nullable();
             $table->timestamps();
         });
     }

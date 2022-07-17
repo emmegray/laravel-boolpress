@@ -7,6 +7,14 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h4 class="card-title">{{ $post->title }}</h4>
+            @if($post->image)
+                <div class="image">
+                    <img src="{{asset('storage' . $post->image)}}" alt="{{$post->image_original_name}}">
+                    <div><i>{{$post->image_original_nameimage}}</i></div>
+                </div>
+            @endif
+            <h4 class="card-title">{{ $post->title }}</h4>
+
             <p class="card-text">{{ $post->content}}</p>
             <h5 class="card-title">{{$post->category ? $post->category->name:'No category for this post'}}</h5>
             <h5 class="card-title">

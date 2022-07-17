@@ -39,6 +39,8 @@ class Post extends Model
         'content',
         'slug',
         'category_id',
-        'tag_id'
+        'tag_id',
+        'image_original_name'.
+        'image'
     ];
 }

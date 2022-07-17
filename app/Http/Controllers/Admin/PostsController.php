@@ -8,6 +8,7 @@ use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Category;
 use App\Tag;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -49,6 +50,11 @@ class PostsController extends Controller
 
         $new_post = new Post();
         $data = $request->all();
+
+        if(array_key_exists('image', $data)){
+            $data['image_original_name'] = $request->file('image')->getClientOriginalName();
+            $date['image'] = Storage::put('uploads', $data['image']);
+        }
 
         if (array_key_exists('tags', $data)) {
             $new_post->tags()->attach($data['tags']);
@@ -106,6 +112,16 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $data = $request->all();
+
+        if (array_key_exists('image', $data)) {
+
+            if ($post->image) {
+                Storage::delete($post->image);
+            }
+
+            $data['image_original_name'] = $request->file('image')->getClientOriginalName();
+            $data['image'] = Storage::put('uploads', $data['image']);
+        }
 
         if($data['title'] != $post->title){
             $data['slug'] = Post::generateSlug($data['title']);

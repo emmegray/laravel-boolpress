@@ -30,7 +30,13 @@
                 @endforeach
             </select>
         </div>
-
+<div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="image" value="">
+            @error('image')
+            <p class="text-danger">{{$message}}</p>
+            @enderror
+        </div>
         <div class="mb-3">
             @foreach ($tags as $tag)
                 <label for="tag-{{$tag->slug}}">

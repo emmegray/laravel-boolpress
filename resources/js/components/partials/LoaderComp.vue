@@ -19,8 +19,8 @@ name: 'LoaderComp'
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  background: #fcf;
-  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  background: rgb(116, 162, 255);
+  animation: lds-circle 5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
 @keyframes lds-circle {
   0%, 100% {
