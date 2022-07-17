@@ -86,25 +86,25 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/admin/app.js":
-/*!***********************************!*\
-  !*** ./resources/js/admin/app.js ***!
-  \***********************************/
+/***/ "./resources/js/admin/admin.js":
+/*!*************************************!*\
+  !*** ./resources/js/admin/admin.js ***!
+  \*************************************/
 /*! no exports provided */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'F:\\Boolean\\Esercizi\\laravel\\laravel-boolpress\\resources\\js\\admin\\app.js'");
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'F:\\Boolean\\Esercizi\\laravel\\laravel-boolpress\\resources\\js\\admin\\admin.js'");
 
 /***/ }),
 
 /***/ 1:
-/*!*****************************************!*\
-  !*** multi ./resources/js/admin/app.js ***!
-  \*****************************************/
+/*!*******************************************!*\
+  !*** multi ./resources/js/admin/admin.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\Boolean\Esercizi\laravel\laravel-boolpress\resources\js\admin\app.js */"./resources/js/admin/app.js");
+module.exports = __webpack_require__(/*! F:\Boolean\Esercizi\laravel\laravel-boolpress\resources\js\admin\admin.js */"./resources/js/admin/admin.js");
 
 
 /***/ })

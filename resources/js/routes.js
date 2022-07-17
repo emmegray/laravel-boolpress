@@ -2,10 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-import HomeComp from "./components/HomeComp";
-import BlogComp from "./components/BlogComp";
-import AboutComp from "./components/AboutComp";
-import ContactsComp from "./components/ContactsComp";
+import HomeComp from "./components/HomeComp.vue";
+import BlogComp from "./components/BlogComp.vue";
+import AboutComp from "./components/AboutComp.vue";
+import ContactsComp from "./components/ContactsComp.vue";
 
 
 const router = new VueRouter({

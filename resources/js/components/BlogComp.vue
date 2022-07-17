@@ -7,7 +7,7 @@
     @click="getApi(pagination.current -1)"
     :disabled = "pagination.current=== 1"
     >
-    << </button>
+    ⬅️ </button>
 
     <button v-for="i in pagination.last"
     :key="i"
@@ -20,7 +20,7 @@
     @click="getApi(pagination.current +1)"
     :disabled = "pagination.current===pagination.last"
     >
-    >> </button>
+    ➡️ </button>
   </div>
 
 
