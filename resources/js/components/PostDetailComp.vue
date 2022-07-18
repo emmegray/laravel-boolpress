@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div>
+    <div class="container">
       <h1>{{ post.title }}</h1>
       <i>{{ formatDate }}</i>
       <p>{{ post.content }}</p>
-      <h3>{{ post.category.name }}</h3>
-      <h3>Tags:</h3>
+      <h5>{{ post.category.name }}</h5>
+      <h5>Tags:</h5>
       <ul class="list-group">
         <li class="list-group-item" v-for="tag in post.tags" :key="`tag${tag.id}`">{{ tag.name }}</li>
       </ul>

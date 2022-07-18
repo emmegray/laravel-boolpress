@@ -2394,7 +2394,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", [_c("h1", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("i", [_vm._v(_vm._s(_vm.formatDate))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("h3", [_vm._v(_vm._s(_vm.post.category.name))]), _vm._v(" "), _c("h3", [_vm._v("Tags:")]), _vm._v(" "), _c("ul", {
+  return _c("div", [_c("div", {
+    staticClass: "container"
+  }, [_c("h1", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("i", [_vm._v(_vm._s(_vm.formatDate))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("h5", [_vm._v(_vm._s(_vm.post.category.name))]), _vm._v(" "), _c("h5", [_vm._v("Tags:")]), _vm._v(" "), _c("ul", {
     staticClass: "list-group"
   }, _vm._l(_vm.post.tags, function (tag) {
     return _c("li", {
